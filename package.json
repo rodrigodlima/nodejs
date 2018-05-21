@@ -1,0 +1,13 @@
+{
+  "name": "myappnode",
+  "version": "1.0.0",
+  "description": "Hello World in Nodejs",
+  "author": "Rodrigo Lima <rodrigodlima@gmail.com>",
+  "main": "myapp.js",
+  "scripts": {
+    "start": "node myapp.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}
