@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-oiaiosass
 const express = require('express');
 
 const app = express();
