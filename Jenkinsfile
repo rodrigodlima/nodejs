@@ -10,7 +10,7 @@ pipeline {
       stage('test') {
           steps {
               echo "Install Mocha and test code"
-              sh 'sudo npm i -g mocha'
+              sh 'npm i mocha'
               sh './node_modules/.bin/mocha .'
           }
       }
