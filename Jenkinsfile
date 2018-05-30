@@ -11,7 +11,7 @@ pipeline {
           steps {
               echo "Install Mocha and test code"
               sh 'npm i mocha'
-              sh './node_modules/.bin/mocha .'
+              sh 'for i in $(find -name "*.js" -not -path "./node_modules/*"); do ./node_modules/.bin/mocha $i; done'
           }
       }
   }
