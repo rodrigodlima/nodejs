@@ -1,14 +1,17 @@
 pipeline {
   agent any
   stages {
+      stage('Build') {
+          steps {
+              echo "Building dependencies"
+              sh 'npm i'
+          }
+      }
       stage('test') {
           steps {
-              echo "test pipeline"
-              sh npm install
-              sh npm install mocha
-              for i in $(find -name "*.js" -not -path "./node_modules/*"); do ./node_modules/.bin/mocha $i; done
-              sh sleep 5
-              sh tar zcvf projeto.tgz --exclude=./.git/ *
+              echo "Install Mocha and test code"
+              sh 'npm i -g mocha'
+              sh 'mocha .'      
           }
       }
   }
