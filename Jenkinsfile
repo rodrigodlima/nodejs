@@ -6,9 +6,9 @@ pipeline {
               echo "test pipeline"
               sh npm install
               sh npm install mocha
-              sh for i in $(find -name "*.js" -not -path "./node_modules/*"); do ./node_modules/.bin/mocha $i; done
+              for i in $(find -name "*.js" -not -path "./node_modules/*"); do ./node_modules/.bin/mocha $i; done
               sh sleep 5
-              tar zcvf projeto.tgz --exclude=./.git/ *
+              sh tar zcvf projeto.tgz --exclude=./.git/ *
           }
       }
   }
