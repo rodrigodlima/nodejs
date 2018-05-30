@@ -3,15 +3,15 @@ pipeline {
   stages {
       stage('Build') {
           steps {
-              echo "Building dependencies"
+              echo "Generate node_modules"
               sh 'npm i'
           }
       }
       stage('test') {
           steps {
               echo "Install Mocha and test code"
-              sh 'npm i -g mocha'
-              sh './node_modules/.bin/mocha .'      
+              sh 'sudo npm i -g mocha'
+              sh './node_modules/.bin/mocha .'
           }
       }
   }
