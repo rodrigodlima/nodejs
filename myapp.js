@@ -19,7 +19,7 @@ const logger = winston.createLogger({
 });
 
 app.get('/', (req, res) => {
-  res.status(200).send('Hello, OpenShift!! AGAIN').end();
+  res.status(200).send('Hello, OpenShift!!').end();
   logger.info('http access code 200 OK');
 });
 
