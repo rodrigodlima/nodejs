@@ -1,0 +1,15 @@
+version: 2.1
+
+orbs:
+  node-packages: <nome-do-repositorio-git>/node-orb@0.0.1
+  docker-build: <nome-do-repositorio-git>/docker-orb@0.0.1
+
+jobs:
+  build:
+    executor: node/default
+    steps:
+      - checkout
+      - node-packages/install-packages
+      - docker-build/build-and-push:
+          requires:
+            - node-packages/install-packages
